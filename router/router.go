@@ -8,13 +8,14 @@ import "github.com/gin-gonic/gin"
 
 // maiusculo - automaticamente exportado do package (public)
 func Initialize() {
+	// Initialize Router
 	router := gin.Default()
 
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	// Initialize Routes
+	// passing router through pointer, instead of value
+	// (not sending the whole house, but the house's "address")
+	initializeRoutes(router)
 
+	// Running server
 	router.Run(":8080")
 }
