@@ -1,12 +1,14 @@
 package router
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"github.com/ltakato/gopportunities/handler"
 )
 
 func initializeRoutes(router *gin.Engine) {
+	// Initialize Handler
+	handler.InitializeHandler()
+
 	v1 := router.Group("/api/v1")
 	{
 		// annoymous function as handler
@@ -16,11 +18,14 @@ func initializeRoutes(router *gin.Engine) {
 			})
 		})
 
-		v1.GET("/openings", func(ctx *gin.Context) {
-			// instead of returning 200, using http module's StatusOk
-			ctx.JSON(http.StatusOK, gin.H{
-				"message": "GET opening",
-			})
-		})
+		v1.GET("/openings", handler.ListOpeningsHandler)
+
+		v1.POST("/openings", handler.CreateOpeningHandler)
+
+		v1.DELETE("/openings", handler.DeleteOpeningHandler)
+
+		v1.PUT("/openings/:id", handler.UpdateOpeningHandler)
+
+		v1.GET("/openings/:id", handler.ShowOpeningHandler)
 	}
 }

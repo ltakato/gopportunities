@@ -3,3 +3,29 @@ GET http://localhost:8080/api/v1/ping
 ###
 
 GET http://localhost:8080/api/v1/openings
+
+###
+
+POST http://localhost:8080/api/v1/openings
+content-type: application/json
+
+{
+    "role": "Senior da vida e do universo",
+    "company": "Ultrasoft",
+    "location": "New York",
+    "remote": true,
+    "link": "vaga.com/coolvaga",
+    "salary": 520000
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/openings
+
+###
+
+PUT http://localhost:8080/api/v1/openings
+
+###
+
+GET http://localhost:8080/api/v1/openings
