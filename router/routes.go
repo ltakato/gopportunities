@@ -22,10 +22,10 @@ func initializeRoutes(router *gin.Engine) {
 
 		v1.POST("/openings", handler.CreateOpeningHandler)
 
-		v1.DELETE("/openings", handler.DeleteOpeningHandler)
+		v1.DELETE("/opening", handler.DeleteOpeningHandler)
 
-		v1.PUT("/openings/:id", handler.UpdateOpeningHandler)
+		v1.PUT("/opening", handler.UpdateOpeningHandler)
 
-		v1.GET("/openings/:id", handler.ShowOpeningHandler)
+		v1.GET("/opening", handler.ShowOpeningHandler)
 	}
 }
