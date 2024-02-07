@@ -4,7 +4,7 @@
 APP_NAME=gopportunities
 
 # tasks
-default: run
+default: run-with-docs
 run:
 	@go run main.go
 build:
@@ -14,8 +14,8 @@ test:
 docs:
 	@swag init
 run-with-docs:
-	@go run main.go
 	@swag init
+	@go run main.go
 clean:
 	@rm -f ${APP_NAME}
 	@rm -rf ./docs
