@@ -28,4 +28,4 @@ PUT http://localhost:8080/api/v1/openings
 
 ###
 
-GET http://localhost:8080/api/v1/openings
+GET http://localhost:8080/api/v1/openings/1
